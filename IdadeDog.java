@@ -4,6 +4,7 @@ public class IdadeDog{
 	public static void main(String[]args){
 		
 		Scanner leitor = new Scanner(System.in);
+		leitor.useLocale(java.util.Locale.US);
 		
 		System.out.println("Bem-vindo ao calculadora de idade do seu Pet");
 		
@@ -17,18 +18,25 @@ public class IdadeDog{
 		
 		System.out.println("Qual a idade do seu Pet");
 		
-		int idadePet = leitor.nextInt();
+		double idadePet = leitor.nextDouble();
 		
 		leitor.nextLine();
 		
-		int calculadoraIdadePet = idadePet*7;
+		double calculadoraIdadePet = idadePet*7;
 		
 		System.out.println( nomeDono + ", A idade do" + nomePet + " é de" + calculadoraIdadePet + "em idade humana");
 		
+		if (calculadoraIdadePet >= 60){
+			System.out.println( "ele está idoso, cuide da saude do seu pet");
+		}
+		else if(calculadoraIdadePet < 7){
+				System.out.println( " ele é um filhote");
+		}
+		else{
+				System.out.println( " ele é novo, está cheio de energia, aproveite");
+		}
+		
 		leitor.close();
+
 	}
-	
-
-
-
 }
